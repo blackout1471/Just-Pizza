@@ -75,6 +75,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Menu.cs" />
+    <Compile Include="classes\Pizza.cs" />
+    <Compile Include="classes\Topping.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
