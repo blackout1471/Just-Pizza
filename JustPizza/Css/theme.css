@@ -1,0 +1,39 @@
+﻿body {
+    margin: 0;
+    height: 100%;
+}
+
+.bgColor {
+    background-color: #30332f;
+}
+
+.headerTextColor {
+    color: #dc3c2d;
+}
+
+.secondTextColor {
+    color: #eedbc1;
+}
+
+.borderColor {
+    border-color: #814539 !important;
+}
+
+
+.linkStyle {
+    text-decoration-color: #814539 !important;
+}
+
+.linkStyle:hover {
+    text-decoration-color: #814539 !important;
+}
+
+#navBar {
+    opacity: 0.95;
+    height: 200px;
+}
+
+#logo {
+    width: 120px;
+    height: 100px;
+}

@@ -1,0 +1,21 @@
+﻿#pizzaImgContainer {
+    height: 400px;
+}
+
+#menuLink {
+    color: #874b38;
+}
+
+#horizontalLine {
+    width: 80%;
+    border-color: #dc3c2d;
+}
+
+.defaultTextColor {
+    color: #eedbc1;
+}
+
+table {
+    margin: auto;
+}
+

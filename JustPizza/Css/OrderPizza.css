@@ -1,0 +1,22 @@
+﻿#ImgContainer {
+    height: 500px;
+}
+
+#horizontalLine {
+    width: 100%;
+    border-color: #dc3c2d;
+}
+
+.orderSelf {
+    color: #dc3c2d;
+    text-decoration: none;
+}
+
+.orderSelf:hover {
+    color: #dc3c2d;
+    text-decoration: none;
+}
+
+table {
+    margin: auto;
+}
