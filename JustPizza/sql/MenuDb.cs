@@ -18,8 +18,8 @@ namespace JustPizza.sql
 
         public MenuDb()
         {
-            //this.ConnectionString = "Data Source=192.168.6.4;Persist Security Info=True;User ID=sa;Password=!Admin123;Database=PizzaDB";
-            this.ConnectionString = "Server=localhost;Database=PizzaDB;Trusted_Connection=True;";
+           this.ConnectionString = "Data Source=192.168.6.4;Persist Security Info=True;User ID=sa;Password=!Admin123;Database=PizzaDB";
+          //  this.ConnectionString = "Server=localhost;Database=PizzaDB;Trusted_Connection=True;";
 
             this.menuDt = new DataTable();
 
@@ -64,5 +64,9 @@ namespace JustPizza.sql
 
             return builder;
         }
+
+
+
+
     }
 }

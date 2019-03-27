@@ -160,5 +160,23 @@ namespace JustPizza.sql
                 this.Close();
             }
         }
+
+        protected bool Login()
+        {
+            try
+            {
+                Open();
+                Close();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+        }
+
+
     }
 }
