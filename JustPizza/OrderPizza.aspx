@@ -46,14 +46,20 @@
     <div class="container-fluid bgColor">
         <div class="row">
             <form runat="server" id="form" class="w-100">
-                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-50" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false">
+                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-50" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false" RowStyle-Height="100" OnSelectedIndexChanged="menuList_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField HeaderText="MenuId" DataField="MenuId" ItemStyle-CssClass="headerTextColor" />
                         <asp:BoundField HeaderText="PizzaName" DataField="PizzaName" ItemStyle-CssClass="text-white" />
                         <asp:BoundField HeaderText="Toppings" DataField="Toppings" ItemStyle-CssClass="text-white" />
                         <asp:BoundField HeaderText="Total" DataField="TotalPrice" ItemStyle-CssClass="text-white" />
+                        <asp:ButtonField Text="Add" CommandName="Select" ItemStyle-ForeColor="#dc3c2d"/>
                     </Columns>
                 </asp:GridView>
+                <div class="container w-50">
+                    <div class="col">
+                        <asp:Button ID="orderNow" Text="Order Now" runat="server" CssClass="float-right border-0 bgColor secondTextColor" OnClick="orderNow_Click"/>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

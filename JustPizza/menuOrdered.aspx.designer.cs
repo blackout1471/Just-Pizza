@@ -10,7 +10,7 @@
 namespace JustPizza {
     
     
-    public partial class OrderPizza {
+    public partial class menuOrdered {
         
         /// <summary>
         /// form control.
@@ -20,23 +20,5 @@ namespace JustPizza {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form;
-        
-        /// <summary>
-        /// menuList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView menuList;
-        
-        /// <summary>
-        /// orderNow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button orderNow;
     }
 }
