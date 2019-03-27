@@ -13,6 +13,10 @@ namespace JustPizza.classes
             {
                 return this.toppings;
             }
+            set
+            {
+                this.toppings = value;
+            }
         }
 
         public int Id
@@ -45,11 +49,20 @@ namespace JustPizza.classes
             }
         }
 
+        public static int GetStartPrice
+        {
+            get
+            {
+                return startPrice;
+            }
+        }
+
         private List<Topping> toppings = new List<Topping>();
 
         private int id;
         private string name;
-        private int startPrice = 36;
+
+        private static int startPrice = 36;
 
         public Pizza(int id, string name)
         {
@@ -62,6 +75,32 @@ namespace JustPizza.classes
             this.id = id;
             this.name = name;
             this.toppings = toppings;
+        }
+
+        public override string ToString()
+        {
+            string builder = "";
+
+            builder += String.Format("Id: {0} Name: {1} [", this.id, this.name);
+
+            int tPrice = startPrice;
+
+            for (int i = 0; i < toppings.Count; i++)
+            {
+                if (i != toppings.Count-1)
+                {
+
+                    builder += toppings[i].Name + ",";
+                }else
+                {
+                    builder += toppings[i].Name;
+                }
+                tPrice += toppings[i].Price;
+            }
+
+            builder += "] Price: " + tPrice;
+
+            return builder;
         }
     }
 }
