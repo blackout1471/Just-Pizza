@@ -14,8 +14,8 @@ namespace JustPizza
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            menuTable.DataSource = menu.MenuDt;
-            menuTable.DataBind();
+            menuList.DataSource = menu.GetMenu();
+            menuList.DataBind();
         }
     }
 }

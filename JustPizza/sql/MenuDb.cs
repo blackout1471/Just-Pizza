@@ -1,70 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using JustPizza.classes;
 
 namespace JustPizza.sql
 {
     public class MenuDb : DataConnection
     {
-        public DataTable MenuDt
-        {
-            get
-            {
-                return this.menuDt;
-            }
-        }
-
-        private DataTable menuDt;
-
 
         public MenuDb()
         {
-           this.ConnectionString = "Data Source=192.168.6.4;Persist Security Info=True;User ID=sa;Password=!Admin123;Database=PizzaDB";
-          //  this.ConnectionString = "Server=localhost;Database=PizzaDB;Trusted_Connection=True;";
+           //this.ConnectionString = "Data Source=192.168.6.4;Persist Security Info=True;User ID=sa;Password=!Admin123;Database=PizzaDB";
+            this.ConnectionString = "Server=localhost;Database=PizzaDB;Trusted_Connection=True;";
 
-            this.menuDt = new DataTable();
-
-            this.UpdateMenuLocal();
         }
 
-        /// <summary>
-        /// Update the menu locally
-        /// </summary>
-        private void UpdateMenuLocal()
+        public List<PizzaMenu> GetMenu()
         {
-            DataTable tmpMenu = new DataTable();
+            PizzaDb pizDb = new PizzaDb();
 
-            string menuString = "SELECT Menu.Id as MenuId, MAX(Pizzas.PName) as pizzaName, STRING_AGG(Toppings.TName, ', ') as Toppings, SUM(Toppings.price) as TotalPrice FROM Menu" +
-                                " INNER JOIN Pizzas ON Pizzas.Id = Menu.PizzaId" +
-                                " INNER JOIN PizzaToppings ON PizzaToppings.PizzaId = Pizzas.Id" +
-                                " INNER JOIN Toppings ON Toppings.Id = PizzaToppings.ToppingId" +
-                                " GROUP BY Menu.Id;";
+            string menuCmd = "SELECT * FROM Menu";
+            List<PizzaMenu> tmpMenu = new List<PizzaMenu>();
 
-            tmpMenu = this.GetData(menuString);
+            DataTable menuDt = this.GetData(menuCmd);
 
-            this.menuDt = tmpMenu;
-        }
-
-        /// <summary>
-        /// Returns the menu as a string
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            string builder = "";
-            int cols = this.menuDt.Columns.Count;
-
-            foreach (DataRow row in this.menuDt.Rows)
+            for (int i = 0; i < menuDt.Rows.Count; i++)
             {
-                for (int i = 0; i < cols; i++)
-                {
-                    builder += row[i] + " ";
-                }
-                builder += Environment.NewLine;
+                Pizza curPiz = pizDb.GetPizza(Int32.Parse(menuDt.Rows[i][1].ToString()));
+
+                int menuid = Int32.Parse(menuDt.Rows[i][0].ToString());
+
+                PizzaMenu pizMenu = new PizzaMenu(menuid, curPiz.Id, curPiz.Name, curPiz.Toppings);
+
+                tmpMenu.Add(pizMenu);
             }
 
-            return builder;
+            return tmpMenu;
         }
-
 
 
 

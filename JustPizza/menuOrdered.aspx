@@ -40,10 +40,16 @@
         <div class="row">
             <hr id="horizontalLine"/>
         </div>
-        <div class="row text-center">
+        <div class="container h-100">
             <form runat="server" id="form" class="w-100">
-                <asp:Label ID="CustomPizzas" Text="" runat="server" CssClass="text-white"></asp:Label>
-                <asp:Label ID="PriceInAll" Text="" runat="server" CssClass="text-white"></asp:Label>
+                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-100" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false" RowStyle-Height="100">
+                    <Columns>
+                        <asp:BoundField HeaderText="PizzaName" DataField="Name" ItemStyle-CssClass="text-white" />
+                        <asp:BoundField HeaderText="Toppings" DataField="ToppingsToString" ItemStyle-CssClass="text-white" />
+                        <asp:BoundField HeaderText="Total" DataField="TotalPrice" DataFormatString="{0} Kr." ItemStyle-CssClass="text-white" />
+                    </Columns>
+                </asp:GridView>
+                <asp:Label ID="PriceInAll" Text="" runat="server" CssClass="headerTextColor"></asp:Label>
             </form>
         </div>
     </div>

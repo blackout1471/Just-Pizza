@@ -11,22 +11,6 @@ namespace JustPizza
 {
     public partial class menuOrdered : System.Web.UI.Page
     {
-        public List<PizzaMenu> pizzaOrders
-        {
-            get
-            {
-                if (HttpContext.Current.Session["order"] == null)
-                {
-                    HttpContext.Current.Session["order"] = new List<PizzaMenu>();
-                }
-                return HttpContext.Current.Session["order"] as List<PizzaMenu>;
-            }
-            set
-            {
-                HttpContext.Current.Session["order"] = value;
-            }
-        }
-
         public List<Pizza> CustomPizzaOrders
         {
             get
@@ -47,19 +31,15 @@ namespace JustPizza
         {
             int priceAll = 0;
 
+            menuList.DataSource = CustomPizzaOrders;
+            menuList.DataBind();
+
             for (int i = 0; i < CustomPizzaOrders.Count; i++)
             {
-                CustomPizzas.Text += this.CustomPizzaOrders[i].ToString() + "<br>";
                 priceAll += this.CustomPizzaOrders[i].TotalPrice;
             }
 
-            for (int i = 0; i < this.pizzaOrders.Count; i++)
-            {
-                CustomPizzas.Text += this.pizzaOrders[i].ToString() + "<br>";
-                priceAll += this.pizzaOrders[i].ToppingsPrice;
-            }
-
-            PriceInAll.Text = "Price: " + priceAll.ToString();
+            PriceInAll.Text = "Price in all: " + priceAll.ToString();
         }
     }
 }
