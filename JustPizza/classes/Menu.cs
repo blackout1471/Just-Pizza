@@ -7,6 +7,9 @@ namespace JustPizza.classes
 {
     public class PizzaMenu : Pizza
     {
+        /// <summary>
+        /// The menuId of the menu
+        /// </summary>
         public int MenuId
         {
             get

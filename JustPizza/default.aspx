@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./Css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="./Css/theme.css" type="text/css" />
     <link rel="stylesheet" href="./Css/default.css" type="text/css" />
 
@@ -52,7 +52,7 @@
     <div class="container-fluid bgColor">
         <div class="p-2 row">
             <form runat="server" id="form" class="w-100">
-                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-50" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false" RowStyle-Height="100">
+                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-75" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false" RowStyle-Height="100">
                     <Columns>
                         <asp:BoundField HeaderText="MenuId" DataField="MenuId" ItemStyle-CssClass="headerTextColor" />
                         <asp:BoundField HeaderText="PizzaName" DataField="Name" ItemStyle-CssClass="text-white" />

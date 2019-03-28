@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./Css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="./Css/theme.css" type="text/css" />
     <link rel="stylesheet" href="./Css/menuOrdered.css" type="text/css" />
 
@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <title>JustPizza - Order From Menu</title>
+    <title>JustPizza - Order Success</title>
 </head>
 <body>
     <div class="navbar fixed-top bgColor" id="navBar">
@@ -49,7 +49,7 @@
                         <asp:BoundField HeaderText="Total" DataField="TotalPrice" DataFormatString="{0} Kr." ItemStyle-CssClass="text-white" />
                     </Columns>
                 </asp:GridView>
-                <asp:Label ID="PriceInAll" Text="" runat="server" CssClass="headerTextColor"></asp:Label>
+                <h4><asp:Label ID="PriceInAll" Text="" runat="server" CssClass="secondTextColor"></asp:Label></h4>
             </form>
         </div>
     </div>
