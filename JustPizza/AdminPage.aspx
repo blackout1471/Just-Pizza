@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-       <link rel="stylesheet" href="./Css/Admin.css" type="text/css" />
+       <link rel="stylesheet" href="./Css/Apage.css" type="text/css" />
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -15,9 +15,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-light bg-light">
-            <a class="Input" href="#">Admin Menu</a>
+        <nav class="navbar">
+            <a class="input" href="#">Admin Menu</a>
+            <asp:Button class="rightTXT" ID="Button1" runat="server" onclick="Logout_click" Text="Logout" />  
         </nav>
+        
 
     </form>
 </body>

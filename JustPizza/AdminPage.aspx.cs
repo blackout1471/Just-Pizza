@@ -24,5 +24,15 @@ namespace JustPizza.Css
             }
         
         }
+
+
+        protected void Logout_click(object sender, EventArgs e)
+        {
+
+            Session["Login"] = null;
+            Response.Redirect("AdminLogin.aspx");
+        }
+
+
     }
 }
