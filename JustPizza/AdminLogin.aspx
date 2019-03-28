@@ -44,7 +44,7 @@
             <tr>
                 <td class="centerText">&nbsp;</td>
                 <td class="centerText">
-                    <asp:Label ID="loginConfirmation" runat="server" Enabled="False"></asp:Label>
+                    <asp:Label ID="loginConfirmation" runat="server" Enabled="False"> </asp:Label>
                 </td>
                 <td>&nbsp;</td>
             </tr>
