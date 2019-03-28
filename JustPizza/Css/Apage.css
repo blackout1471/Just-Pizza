@@ -1,6 +1,4 @@
-﻿body {
-}
-
+﻿
 .navbar{
     background-color:black;
 
@@ -15,3 +13,9 @@
     color : white;
     text-align :right;
 }
+
+.size{
+    height : 100%;
+    width : 100%;
+}
+
