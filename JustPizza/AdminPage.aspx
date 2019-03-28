@@ -28,53 +28,21 @@
         </nav>
 
 
-        <div class="form-group">
-            <div class="container">
-                <label for="sel1">Select pizza to change it</label>
-                <select class="form-control" id="sel1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-      
-            </div>
+
+        <div class="container-fluid bgColor">
+                <asp:GridView runat="server" ID="menuList" CssClass="w-75 m-auto" ShowHeader="false" BorderStyle="None" GridLines="both" AutoGenerateColumns="false" RowStyle-Height="100" OnSelectedIndexChanged ="DeletePizza">
+                    <Columns>
+                        <asp:BoundField HeaderText="MenuId" DataField="MenuId" ItemStyle-CssClass="headerTextColor" />
+                        <asp:BoundField HeaderText="PizzaName" DataField="Name" ItemStyle-CssClass="text-black" />
+                        <asp:BoundField HeaderText="Toppings" DataField="ToppingsToString" ItemStyle-CssClass="text-black" />
+                        <asp:BoundField HeaderText="Total" DataField="TotalPrice" DataFormatString="{0} Kr." ItemStyle-CssClass="text-black" />
+                        <asp:ButtonField Text="Delete" CommandName="Select" ItemStyle-ForeColor="#dc3c2d"/>
+                    </Columns>
+                </asp:GridView>
         </div>
+
+
     </form>
-
-
-    <div class="container">      
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Pizza</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td><!--Input text from pizza-->
-        <td>Doe</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-
-      </tr>
-    </tbody>
-  </table>
-</div>
-    
-   
-
-
-
-
 
 
 </body>
