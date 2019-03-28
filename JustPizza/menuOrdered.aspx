@@ -42,7 +42,8 @@
         </div>
         <div class="row text-center">
             <form runat="server" id="form" class="w-100">
-                
+                <asp:Label ID="CustomPizzas" Text="" runat="server" CssClass="text-white"></asp:Label>
+                <asp:Label ID="PriceInAll" Text="" runat="server" CssClass="text-white"></asp:Label>
             </form>
         </div>
     </div>

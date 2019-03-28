@@ -45,8 +45,21 @@ namespace JustPizza
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            int priceAll = 0;
 
+            for (int i = 0; i < CustomPizzaOrders.Count; i++)
+            {
+                CustomPizzas.Text += this.CustomPizzaOrders[i].ToString() + "<br>";
+                priceAll += this.CustomPizzaOrders[i].TotalPrice;
+            }
+
+            for (int i = 0; i < this.pizzaOrders.Count; i++)
+            {
+                CustomPizzas.Text += this.pizzaOrders[i].ToString() + "<br>";
+                priceAll += this.pizzaOrders[i].ToppingsPrice;
+            }
+
+            PriceInAll.Text = "Price: " + priceAll.ToString();
         }
     }
 }

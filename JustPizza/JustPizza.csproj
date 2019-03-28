@@ -70,6 +70,7 @@
     <Content Include="Css\default.css" />
     <Content Include="Css\menuOrdered.css" />
     <Content Include="Css\OrderPizza.css" />
+    <Content Include="Css\orderSelf.css" />
     <Content Include="Css\theme.css" />
     <Content Include="default.aspx" />
     <Content Include="menuOrdered.aspx" />

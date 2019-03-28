@@ -35,7 +35,7 @@ namespace JustPizza.classes
         {
             get
             {
-                return this.toppingsPrice;
+                return this.toppingsPrice + Pizza.GetStartPrice;
             }
         }
 
@@ -50,6 +50,15 @@ namespace JustPizza.classes
             this.name = name;
             this.toppings = toppings;
             this.toppingsPrice = toppingsPrice;
+        }
+
+        public override string ToString()
+        {
+            string builder = "";
+
+            builder += "Name: " + this.name + "[" + this.toppings + "]" + "Price: " + this.toppingsPrice;
+
+            return builder;
         }
     }
 }
