@@ -12,11 +12,20 @@ namespace JustPizza.Css
     public partial class AdminPage : System.Web.UI.Page
     {
         MenuDb menu = new MenuDb();
-       
+     
+        List<PizzaMenu> dataSource;
 
+
+        /// <summary>
+        /// Check if you are logged in if not redirect you to login screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-      
+            menu = new MenuDb();
+
+            dataSource = menu.GetMenu();
 
             if (HttpContext.Current.Session["Login"] != null)
             {
@@ -32,7 +41,11 @@ namespace JustPizza.Css
         
         }
 
-
+        /// <summary>
+        /// button that log you out.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Logout_click(object sender, EventArgs e)
         {
 
@@ -40,10 +53,15 @@ namespace JustPizza.Css
             Response.Redirect("AdminLogin.aspx");
         }
 
-
+        /// <summary>
+        /// Deleting pizza menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void DeletePizza(object sender, EventArgs e)
         {
            
+            
             //Skal kunne delete pizza from database.
             
 
