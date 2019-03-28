@@ -2,6 +2,7 @@
 using JustPizza.sql;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -60,7 +61,16 @@ namespace JustPizza.Css
         /// <param name="e"></param>
         public void DeletePizza(object sender, EventArgs e)
         {
-           
+
+            string menuString =menuList.SelectedRow.Cells[0].Text;
+
+            int menuid = 0;
+
+            Int32.TryParse(menuString,out menuid);
+            Debug.Print(menuid.ToString());
+
+
+           menu.DeleteMenuItem(menuid);
             
             //Skal kunne delete pizza from database.
             
