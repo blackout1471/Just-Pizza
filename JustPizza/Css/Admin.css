@@ -1,0 +1,15 @@
+﻿body{
+    text-align : center;
+}
+
+form  {
+    display: inline-block;
+}
+.input{
+
+    color:red;
+}
+
+.centerText{
+    text-align : center;
+}
