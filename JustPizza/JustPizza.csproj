@@ -71,6 +71,7 @@
     <Content Include="AdminPage.aspx" />
     <Content Include="Css\Alogin.css" />
     <Content Include="Css\Apage.css" />
+    <Content Include="Css\bootstrap.min.css" />
     <Content Include="Css\default.css" />
     <Content Include="Css\menuOrdered.css" />
     <Content Include="Css\OrderPizza.css" />
