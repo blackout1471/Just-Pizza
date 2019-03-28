@@ -81,7 +81,7 @@ namespace JustPizza.classes
         {
             string builder = "";
 
-            builder += String.Format("Id: {0} Name: {1} [", this.id, this.name);
+            builder += String.Format("Name: {0} [", this.name);
 
             int tPrice = startPrice;
 
