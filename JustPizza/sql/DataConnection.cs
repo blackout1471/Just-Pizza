@@ -142,6 +142,10 @@ namespace JustPizza.sql
             }
         }
 
+        /// <summary>
+        /// Updates the data given in a query string
+        /// </summary>
+        /// <param name="sqlCommand"></param>
         protected void UpdateData(string sqlCommand)
         {
             try
