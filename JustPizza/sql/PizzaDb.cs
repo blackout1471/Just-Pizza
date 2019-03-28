@@ -119,7 +119,14 @@ namespace JustPizza.sql
         {
             string insPizzCmd = "INSERT INTO Pizzas VALUES ('" + newPizza.Name + "')";
 
-            this.InsertData(insPizzCmd);
+            this.InsertData(insPizzCmd); // Add Pizza
+
+            // Add Relation to toppings
+            foreach (Topping exTop in newPizza.Toppings)
+            {
+                string relPizzTop = "INSERT INTO PizzaToppings VALUES ('" + newPizza.Id + "', '" + exTop.Id + "', '1')";
+                this.InsertData(relPizzTop);
+            }
         }
     }
 }
