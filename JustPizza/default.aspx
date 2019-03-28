@@ -52,7 +52,7 @@
     <div class="container-fluid bgColor">
         <div class="p-2 row">
             <form runat="server" id="form" class="w-100">
-                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-50" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false" RowStyle-Height="100">
+                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-75" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false" RowStyle-Height="100">
                     <Columns>
                         <asp:BoundField HeaderText="MenuId" DataField="MenuId" ItemStyle-CssClass="headerTextColor" />
                         <asp:BoundField HeaderText="PizzaName" DataField="Name" ItemStyle-CssClass="text-white" />

@@ -29,6 +29,10 @@ namespace JustPizza
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Check that there is an order
+            if (this.CustomPizzaOrders.Count == 0)
+                this.Response.Redirect("./default.aspx");
+
             int priceAll = 0;
 
             menuList.DataSource = CustomPizzaOrders;
@@ -39,7 +43,9 @@ namespace JustPizza
                 priceAll += this.CustomPizzaOrders[i].TotalPrice;
             }
 
-            PriceInAll.Text = "Price in all: " + priceAll.ToString();
+            PriceInAll.Text = "Price in all: " + priceAll.ToString() + " Kr.";
+
+            this.CustomPizzaOrders = null;
         }
     }
 }

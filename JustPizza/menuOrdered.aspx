@@ -49,7 +49,7 @@
                         <asp:BoundField HeaderText="Total" DataField="TotalPrice" DataFormatString="{0} Kr." ItemStyle-CssClass="text-white" />
                     </Columns>
                 </asp:GridView>
-                <asp:Label ID="PriceInAll" Text="" runat="server" CssClass="headerTextColor"></asp:Label>
+                <h4><asp:Label ID="PriceInAll" Text="" runat="server" CssClass="secondTextColor"></asp:Label></h4>
             </form>
         </div>
     </div>

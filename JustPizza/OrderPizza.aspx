@@ -57,7 +57,7 @@
                 </asp:GridView>
                 <div class="container w-50">
                     <div class="col">
-                        <asp:Button ID="orderNow" Text="Order Now" runat="server" CssClass="float-right border-0 bgColor secondTextColor" OnClick="orderNow_Click"/>
+                        <asp:Button ID="orderNow" Text="Order Now" runat="server" CssClass="float-right bgColor secondTextColor hoverBorder font-weight-bold" OnClick="orderNow_Click"/>
                     </div>
                 </div>
             </form>
