@@ -45,7 +45,7 @@ namespace JustPizza.classes
                     totalPrice += this.toppings[i].Price;
                 }
 
-                return totalPrice;
+                return totalPrice + startPrice;
             }
         }
 
@@ -54,6 +54,21 @@ namespace JustPizza.classes
             get
             {
                 return startPrice;
+            }
+        }
+
+        public string ToppingsToString
+        {
+            get
+            {
+                string tmp = "";
+
+                foreach (Topping a in toppings)
+                {
+                    tmp += a.Name + ", ";
+                }
+
+                return tmp;
             }
         }
 

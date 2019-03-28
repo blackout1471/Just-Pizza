@@ -5,60 +5,33 @@ using System.Web;
 
 namespace JustPizza.classes
 {
-    public class PizzaMenu
+    public class PizzaMenu : Pizza
     {
-        public int Id
+        public int MenuId
         {
             get
             {
-                return this.id;
+                return this.menuId;
             }
         }
 
-        public string Name
+        int menuId;
+
+        public PizzaMenu(int menuId, int pid, string name) : base(pid, name)
         {
-            get
-            {
-                return this.name;
-            }
+            this.menuId = menuId;
         }
 
-        public string Toppings
+        public PizzaMenu(int menuId, int pid, string name, List<Topping> toppings) : base(pid, name, toppings)
         {
-            get
-            {
-                return this.toppings;
-            }
-        }
-
-        public int ToppingsPrice
-        {
-            get
-            {
-                return this.toppingsPrice + Pizza.GetStartPrice;
-            }
-        }
-
-        private int id;
-        private string name;
-        private string toppings;
-        private int toppingsPrice;
-
-        public PizzaMenu(int id, string name, string toppings, int toppingsPrice)
-        {
-            this.id = id;
-            this.name = name;
-            this.toppings = toppings;
-            this.toppingsPrice = toppingsPrice;
+            this.menuId = menuId;
         }
 
         public override string ToString()
         {
-            string builder = "";
+            string tmp = base.ToString();
 
-            builder += "Name: " + this.name + "[" + this.toppings + "]" + "Price: " + this.toppingsPrice;
-
-            return builder;
+            return "MenuId " + this.menuId + " " + tmp;
         }
     }
 }

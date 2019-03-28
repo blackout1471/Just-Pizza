@@ -11,32 +11,37 @@ namespace JustPizza
 {
     public partial class OrderPizza : System.Web.UI.Page
     {
-        public List<PizzaMenu> pizzaOrders
+        public List<Pizza> CustomPizzaOrders
         {
             get
             {
-                if (HttpContext.Current.Session["order"] == null)
+                if (HttpContext.Current.Session["CustomOrder"] == null)
                 {
-                    HttpContext.Current.Session["order"] = new List<PizzaMenu>();
+                    HttpContext.Current.Session["CustomOrder"] = new List<Pizza>();
                 }
-                return HttpContext.Current.Session["order"] as List<PizzaMenu>;
+                return HttpContext.Current.Session["CustomOrder"] as List<Pizza>;
             }
             set
             {
-                HttpContext.Current.Session["order"] = value;
+                HttpContext.Current.Session["CustomOrder"] = value;
             }
         }
 
         MenuDb menu;
+        List<PizzaMenu> dataSource;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            menu = new MenuDb();
+
+            dataSource = menu.GetMenu();
+
             if (!this.IsPostBack)
             {
 
-                menu = new MenuDb();
+                
 
-                menuList.DataSource = menu.MenuDt;
+                menuList.DataSource = dataSource;
                 menuList.DataBind();
             }
         }
@@ -44,14 +49,11 @@ namespace JustPizza
         protected void menuList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int menuid = Int32.Parse(menuList.SelectedRow.Cells[0].Text);
-            string pizzaName = menuList.SelectedRow.Cells[1].Text;
-            string top = menuList.SelectedRow.Cells[2].Text;
-            int price = Int32.Parse(menuList.SelectedRow.Cells[3].Text.Split(',')[0]);
+            PizzaMenu curSel = dataSource[menuList.SelectedIndex];
 
-            PizzaMenu pnew = new PizzaMenu(menuid, pizzaName, top, price);
+            Pizza piz = new Pizza(curSel.Id, curSel.Name, curSel.Toppings);
 
-            pizzaOrders.Add(pnew);
+            CustomPizzaOrders.Add(piz);
         }
 
         protected void orderNow_Click(object sender, EventArgs e)

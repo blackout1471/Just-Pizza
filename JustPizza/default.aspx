@@ -51,34 +51,16 @@
     </div>
     <div class="container-fluid bgColor">
         <div class="p-2 row">
-            <table class="table table-borderless w-75">
-                <thead>
-                    <tr class="row">
-                        <td class="col text-white"><h4>Number</h4></td>
-                        <td class="col text-white"><h4>Name</h4></td>
-                        <td class="col text-white"><h4>Toppings</h4></td>
-                        <td class="col text-white"><h4>Total Price</h4></td>
-                    </tr>
-                </thead>
-                <asp:Repeater ID="menuTable" runat="server">
-                    <ItemTemplate>
-                            <tr class="row">
-                                <td class="headerTextColor col">
-                                    <p><%# Eval("MenuId") %></p>
-                                </td>
-                                <td class="defaultTextColor col">
-                                    <p><%# Eval("PizzaName") %></p>
-                                </td>
-                                <td class="defaultTextColor col">
-                                    <p><%# Eval("Toppings") %></p>
-                                </td>
-                                <td class="defaultTextColor col">
-                                    <p><%# Eval("TotalPrice") %> Kr.</p>
-                                </td>
-                            </tr>
-                    </ItemTemplate>
-                </asp:Repeater>  
-            </table>
+            <form runat="server" id="form" class="w-100">
+                <asp:GridView runat="server" ID="menuList" CssClass="border-0 w-50" ShowHeader="false" BorderStyle="None" GridLines="None" AutoGenerateColumns="false" RowStyle-Height="100">
+                    <Columns>
+                        <asp:BoundField HeaderText="MenuId" DataField="MenuId" ItemStyle-CssClass="headerTextColor" />
+                        <asp:BoundField HeaderText="PizzaName" DataField="Name" ItemStyle-CssClass="text-white" />
+                        <asp:BoundField HeaderText="Toppings" DataField="ToppingsToString" ItemStyle-CssClass="text-white" />
+                        <asp:BoundField HeaderText="Total" DataField="TotalPrice" DataFormatString="{0} Kr." ItemStyle-CssClass="text-white" />
+                    </Columns>
+                </asp:GridView>
+            </form>
         </div>
     </div>
 </body>
