@@ -88,5 +88,38 @@ namespace JustPizza.sql
 
             return rtnList;
         }
+
+        /// <summary>
+        /// Delete a pizza from database based on id
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeletePizza(int id)
+        {
+            string delPizCmd = "DELETE FROM Pizzas WHERE Id=" + id;
+
+            this.DeleteData(delPizCmd);
+        }
+
+        /// <summary>
+        /// Updates the pizza based on the pizza object
+        /// </summary>
+        /// <param name="updatedPizza"></param>
+        public void UpdatePizza(Pizza updatedPizza)
+        {
+            string updPizCmd = "UPDATE Pizzas SET Pname='" + updatedPizza.Name + "' WHERE Id=" + updatedPizza.Id;
+
+            this.UpdateData(updPizCmd);
+        }
+
+        /// <summary>
+        /// Adds a pizza to the database
+        /// </summary>
+        /// <param name="newPizza"></param>
+        public void AddPizza(Pizza newPizza)
+        {
+            string insPizzCmd = "INSERT INTO Pizzas VALUES ('" + newPizza.Name + "')";
+
+            this.InsertData(insPizzCmd);
+        }
     }
 }

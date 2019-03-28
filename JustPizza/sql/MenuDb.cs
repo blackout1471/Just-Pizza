@@ -38,7 +38,37 @@ namespace JustPizza.sql
             return tmpMenu;
         }
 
+        /// <summary>
+        /// Deletes a menu item from the database based on the parameter given.
+        /// And the pizza that was in the menu
+        /// </summary>
+        /// <param name="menuid"></param>
+        public void DeleteMenuItem(int menuid)
+        {
+            PizzaDb pizDb = new PizzaDb();
 
+            string getPizzaCmd = "SELECT PizzaId FROM Menu WHERE id = " + menuid;
+            string delCmd = "DELETE FROM Menu WHERE id = " + menuid;
+
+            int pizzaId = Int32.Parse(this.GetData(getPizzaCmd).Rows[0][0].ToString()); // Get pizza id
+
+            // Delete From Menu
+            this.DeleteData(delCmd);
+
+            // Delete the pizza
+            pizDb.DeletePizza(pizzaId);
+        }
+
+        /// <summary>
+        /// Insert menu into database
+        /// </summary>
+        /// <param name="newPizza"></param>
+        public void AddpizzaToMenu(PizzaMenu newPizza)
+        {
+            string insPizToMenuCmd = "INSERT INTO Menu VALUES ('" + newPizza.MenuId + "', '" + newPizza.Id + "')";
+
+            this.InsertData(insPizToMenuCmd);
+        }
 
     }
 }

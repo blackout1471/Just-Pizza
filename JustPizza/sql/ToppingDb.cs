@@ -57,5 +57,38 @@ namespace JustPizza.sql
 
             return rtnList;
         }
+
+        /// <summary>
+        /// Delete a topping based on id
+        /// </summary>
+        /// <param name="id"></param>
+        public void DeleteTopping(int id)
+        {
+            string delTopCmd = "DELETE FROM Toppings WHERE Id=" + id;
+
+            this.DeleteData(delTopCmd);
+        }
+
+        /// <summary>
+        /// Updates a topping based on the topping
+        /// </summary>
+        /// <param name="updatedTopping"></param>
+        public void UpdateTopping(Topping updatedTopping)
+        {
+            string updToppingCmd = "Update Toppings SET Tname='" + updatedTopping.Name + "', Price='" + updatedTopping.Price + "' WHERE Id=" + updatedTopping.Id;
+
+            this.UpdateData(updToppingCmd);
+        }
+
+        /// <summary>
+        /// Adds a topping to the database
+        /// </summary>
+        /// <param name="topping"></param>
+        public void AddTopping(Topping topping)
+        {
+            string insTopping = "INSERT INTO Toppings VALUES ('" + topping.Name + "', '" + topping.Price + "')";
+
+            this.InsertData(insTopping);
+        }
     }
 }
