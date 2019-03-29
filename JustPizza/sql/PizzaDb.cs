@@ -63,6 +63,17 @@ namespace JustPizza.sql
             
         }
 
+
+
+        public int GetPizzaId(string name)
+        {
+            string sqlCmd = "SELECT Id FROM Pizzas WHERE PName=" + name;
+
+            DataTable dt = this.GetData(sqlCmd);
+
+            return Int32.Parse(dt.Rows[0][0].ToString());
+        }
+
         /// <summary>
         /// Get all pizzas with a name
         /// </summary>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="menuOrdered.aspx.cs" Inherits="JustPizza.menuOrdered" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuOrdered.aspx.cs" Inherits="JustPizza.menuOrdered" %>
 
 <!DOCTYPE html>
 

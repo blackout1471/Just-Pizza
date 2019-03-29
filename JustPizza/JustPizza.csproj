@@ -77,13 +77,13 @@
     <Content Include="Css\OrderPizza.css" />
     <Content Include="Css\orderSelf.css" />
     <Content Include="Css\theme.css" />
-    <Content Include="default.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="img\icon.png" />
     <Content Include="img\orderPizza.jpg" />
     <Content Include="img\pizza-bg.png" />
-    <Content Include="menuOrdered.aspx" />
+    <Content Include="MenuOrdered.aspx" />
     <Content Include="OrderPizza.aspx" />
-    <Content Include="orderSelf.aspx" />
+    <Content Include="OrderSelf.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,19 +104,19 @@
     <Compile Include="classes\Menu.cs" />
     <Compile Include="classes\Pizza.cs" />
     <Compile Include="classes\Topping.cs" />
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="menuOrdered.aspx.cs">
-      <DependentUpon>menuOrdered.aspx</DependentUpon>
+    <Compile Include="MenuOrdered.aspx.cs">
+      <DependentUpon>MenuOrdered.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="menuOrdered.aspx.designer.cs">
-      <DependentUpon>menuOrdered.aspx</DependentUpon>
+    <Compile Include="MenuOrdered.aspx.designer.cs">
+      <DependentUpon>MenuOrdered.aspx</DependentUpon>
     </Compile>
     <Compile Include="OrderPizza.aspx.cs">
       <DependentUpon>OrderPizza.aspx</DependentUpon>
@@ -125,12 +125,12 @@
     <Compile Include="OrderPizza.aspx.designer.cs">
       <DependentUpon>OrderPizza.aspx</DependentUpon>
     </Compile>
-    <Compile Include="orderSelf.aspx.cs">
-      <DependentUpon>orderSelf.aspx</DependentUpon>
+    <Compile Include="OrderSelf.aspx.cs">
+      <DependentUpon>OrderSelf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="orderSelf.aspx.designer.cs">
-      <DependentUpon>orderSelf.aspx</DependentUpon>
+    <Compile Include="OrderSelf.aspx.designer.cs">
+      <DependentUpon>OrderSelf.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sql\AdminPageLogin.cs" />

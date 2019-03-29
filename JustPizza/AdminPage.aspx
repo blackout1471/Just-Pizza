@@ -30,17 +30,26 @@
 
 
         <div class="container-fluid bgColor">
-                <asp:GridView runat="server" ID="menuList" CssClass="w-75 m-auto" ShowHeader="false" BorderStyle="None" GridLines="both" AutoGenerateColumns="false" RowStyle-Height="100" OnSelectedIndexChanged ="DeletePizza">
-                    <Columns>
-                        <asp:BoundField HeaderText="MenuId" DataField="MenuId" ItemStyle-CssClass="headerTextColor" />
-                        <asp:BoundField HeaderText="PizzaName" DataField="Name" ItemStyle-CssClass="text-black" />
-                        <asp:BoundField HeaderText="Toppings" DataField="ToppingsToString" ItemStyle-CssClass="text-black" />
-                        <asp:BoundField HeaderText="Total" DataField="TotalPrice" DataFormatString="{0} Kr." ItemStyle-CssClass="text-black" />
-                        <asp:ButtonField Text="Delete" CommandName="Select" ItemStyle-ForeColor="#dc3c2d"/>
-                    </Columns>
-                </asp:GridView>
+            <asp:GridView runat="server" ID="menuList" CssClass="w-75 m-auto" ShowHeader="false" BorderStyle="None" GridLines="both" AutoGenerateColumns="false" RowStyle-Height="100" OnSelectedIndexChanged="DeletePizza">
+                <Columns>
+                    <asp:BoundField HeaderText="MenuId" DataField="MenuId" ItemStyle-CssClass="headerTextColor" />
+                    <asp:BoundField HeaderText="PizzaName" DataField="Name" ItemStyle-CssClass="text-black" />
+                    <asp:BoundField HeaderText="Toppings" DataField="ToppingsToString" ItemStyle-CssClass="text-black" />
+                    <asp:BoundField HeaderText="Total" DataField="TotalPrice" DataFormatString="{0} Kr." ItemStyle-CssClass="text-black" />
+                    <asp:ButtonField Text="Delete" CommandName="Select" ItemStyle-ForeColor="#dc3c2d" />
+                </Columns>
+            </asp:GridView>
         </div>
+        <br />
+        <div class="container">
+            <h4> Create pizza</h4>
+            <asp:TextBox ID="MenuID" runat="server" Text="Menu ID" > </asp:TextBox>
+            <asp:TextBox ID="PizzaName" runat="server" Text="Name" > </asp:TextBox>
+            <asp:TextBox ID="ToppinID" runat="server" Text="ToppingID" > </asp:TextBox>
+            <asp:Button ID="CreatePizza" runat="server" onclick="CreatePizza_Click" Text="Create"/>
+ 
 
+        </div>
 
     </form>
 

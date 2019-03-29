@@ -13,7 +13,13 @@ namespace JustPizza.Css
     public partial class AdminPage : System.Web.UI.Page
     {
         MenuDb menu = new MenuDb();
-     
+
+        ToppingDb topp = new ToppingDb();
+
+        PizzaDb pizzadb = new PizzaDb();
+
+        List<Topping> temparylist = new List<Topping>();
+
         List<PizzaMenu> dataSource;
 
 
@@ -33,13 +39,14 @@ namespace JustPizza.Css
                 Page.Visible = true;
                 menuList.DataSource = menu.GetMenu();
                 menuList.DataBind();
+
             }
             else
             {
                 Page.Visible = false;
                 Response.Redirect("AdminLogin.aspx");
             }
-        
+
         }
 
         /// <summary>
@@ -62,24 +69,46 @@ namespace JustPizza.Css
         public void DeletePizza(object sender, EventArgs e)
         {
 
-            string menuString =menuList.SelectedRow.Cells[0].Text;
+            string menuString = menuList.SelectedRow.Cells[0].Text;
 
             int menuid = 0;
 
-            Int32.TryParse(menuString,out menuid);
+            Int32.TryParse(menuString, out menuid);
             Debug.Print(menuid.ToString());
 
 
-           menu.DeleteMenuItem(menuid);
-            
+            // menu.DeleteMenuItem(menuid);
+
             //Skal kunne delete pizza from database.
-            
+
 
         }
 
+        protected void CreatePizza_Click(object sender, EventArgs e)
+        {
+            int topID;
+
+            string pName = PizzaName.Text;
+
+            int menuID;
+
+            Int32.TryParse(MenuID.Text, out menuID);
+
+            Int32.TryParse(ToppinID.Text, out topID);
+
+            temparylist.Add(topp.GetTopping(topID));
 
 
+            Pizza piz = new Pizza(9, pName, temparylist);
+
+            pizzadb.AddPizza(piz);
+
+            int pizId = pizzadb.GetPizzaId(pName);
+
+            PizzaMenu pmenu = new PizzaMenu(menuID, pizId, pName);
 
 
+            menu.AddpizzaToMenu(pmenu);
+        }
     }
 }

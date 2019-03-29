@@ -7,72 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JustPizza.Css {
+namespace JustPizza {
     
     
-    public partial class AdminPage {
+    public partial class orderSelf {
         
         /// <summary>
-        /// form1 control.
+        /// form control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form;
         
         /// <summary>
-        /// Button1 control.
+        /// toppingsText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label toppingsText;
         
         /// <summary>
-        /// menuList control.
+        /// toppingList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView menuList;
+        protected global::System.Web.UI.WebControls.GridView toppingList;
         
         /// <summary>
-        /// MenuID control.
+        /// orderNow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MenuID;
+        protected global::System.Web.UI.WebControls.Button orderNow;
         
         /// <summary>
-        /// PizzaName control.
+        /// AddPizza control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PizzaName;
-        
-        /// <summary>
-        /// ToppinID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ToppinID;
-        
-        /// <summary>
-        /// CreatePizza control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreatePizza;
+        protected global::System.Web.UI.WebControls.Button AddPizza;
     }
 }
